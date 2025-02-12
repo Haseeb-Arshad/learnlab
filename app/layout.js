@@ -22,8 +22,50 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Sidebar />
+        <main style={{ flex: 1, padding: '1rem' }}>
+          {children}
+        </main>
       </body>
     </html>
+  );
+}
+
+
+
+function Sidebar() {
+  return (
+    <aside
+      style={{
+        width: '220px',
+        background: '#f4f4f4',
+        padding: '1rem',
+        borderRight: '1px solid #ddd',
+      }}
+    >
+      <h2>EduDock</h2>
+      <nav>
+        <ul style={{ listStyle: 'none', padding: 0 }}>
+          <li style={{ margin: '0.5rem 0' }}>
+            <a href="/resources">Resources</a>
+          </li>
+          <li style={{ margin: '0.5rem 0' }}>
+            <a href="/ask-ai">Ask AI</a>
+          </li>
+          <li style={{ margin: '0.5rem 0' }}>
+            <a href="/lectures">Lectures</a>
+          </li>
+          <li style={{ margin: '0.5rem 0' }}>
+            <a href="/projects">Projects</a>
+          </li>
+          <li style={{ margin: '0.5rem 0' }}>
+            <a href="/sticky-notes">Sticky Notes</a>
+          </li>
+          <li style={{ margin: '0.5rem 0' }}>
+            <a href="/calendar">Calendar</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
   );
 }
