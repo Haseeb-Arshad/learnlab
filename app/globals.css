@@ -1,21 +1,81 @@
+/* app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Custom fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+/* Delay utility classes */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Glass effect (used in some cards) */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Custom scrollbar for scrollable areas */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+/* (Optional) Additional styling for macOS Finder–style grid in Resources */
+.macos-folder,
+.macos-file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.macos-folder .icon,
+.macos-file .icon {
+  padding: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.macos-folder .icon {
+  background-color: #007aff; /* macOS folder blue */
+}
+.macos-file .icon {
+  background-color: #8e8e93; /* macOS file gray */
 }
